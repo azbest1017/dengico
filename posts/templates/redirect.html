@@ -1,0 +1,36 @@
+{% extends 'main.html'  %}
+{% load static %}
+{% block content %}
+<div class="row mfo_main redirect_page">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6 text-center">
+  <h4>Мы перенаправляем Ваш запрос на сайт МФО</h4>
+  <h2><strong>"{{ post.name}}"</strong></h2>
+  <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+  <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+  </svg>
+
+  <div class="col-md-3">
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <img width="100%" src="/{{ post.logo }}"/>
+    <div class="col-md-12 text-center">
+      <h5>Если страница не открылась - кликните <a href="{{post.link}}">здесь</a></h5>
+    </div>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>
+<script>
+window.setTimeout(function(){
+      window.location.href = "{{ post.link}}";
+  }, 2500);
+</script>
+
+{% endblock %}

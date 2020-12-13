@@ -1,0 +1,59 @@
+{% extends 'main.html'  %}
+{% load static %}
+{% block content %}
+<div class="row mfo_main">
+  <div class="col-md-8">
+    <h3><strong>{{ post.name}}</strong></h3>
+    {{ post.body |safe}}
+  </div>
+  <div class="col-md-4 mfo_main_right">
+    <div class="row">
+      <img style="border-radius:0.25em; margin-bottom: 30px;" src="/{{ post.logo.name }}" width="100%"/>
+    </div>
+    <div class="row">
+      <h4 class="small_word"><strong>Сумма</strong></h4>
+    </div>
+    <div class="row left_line">
+      <p> от <strong class="credit">{{ post.min_credit}}</strong> рублей<br/>
+    до <strong class="credit">{{ post.max_credit}}</strong> рублей</p>
+    </div>
+    <div class="row">
+      <h4 class="small_word"><strong>срок</strong></h4>
+    </div>
+    <div class="row left_line">
+      <p>от <strong class="credit">{{ post.min_days}}</strong> дней<br/>
+      до <strong class="credit">{{ post.max_days}}</strong> дней</p>
+    </div>
+    <div class="row">
+      <h4 class="small_word"><strong>Ставка в день</strong></h4>
+    </div>
+    <div class="row left_line">
+      <p>от <strong class="credit"> {{ post.percent_per_day}}</strong>%</p>
+    </div>
+    {% if post.first_credit_free == True %}
+    <div class="row text-center">
+        <h5 class="rek rek3 btn-4" style="border: 2px solid #E60042; padding: 5px;">ПЕРВЫЙ ЗАЙМ ПОД 0%</h5>
+    </div>
+    {% endif %}
+    {% if post.scope > 70 %}
+    <div class="row text-center">
+        <h5 class="rek2 rek3">РЕЙТИНГ {{ post.scope}}%</h5>
+    </div>
+    {% endif %}
+    <div class="row">
+    <a  class="rek3" target="_blank" href="{% url 'redirect_go' post.slug %}"><button class="btn but2 but3"><strong>РАССЧИТАТЬ ЗАЙМ</strong></button></a>
+    </div>
+  </div>
+  <div class="col-md-12 withdraw">
+      <h5><strong>Способы вывода</strong></h5>
+      <div class="row">
+        {% for withdraw in post.withdraw.all %}
+          <div class="col-md-2">
+            <img style="border-radius:0.25em; margin-bottom: 30px;" src="/{{ withdraw.logo }}" width="100%"/>
+          </div>
+         {% endfor %}
+      </div>
+  </div>
+</div>
+
+{% endblock %}

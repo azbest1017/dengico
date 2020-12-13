@@ -1,0 +1,132 @@
+{% extends 'main.html'  %}
+{% load static %}
+{% block content %}
+<div class="row">
+  <div id="carouselExampleControls" class="carousel slide main_info" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{% static 'images/main_info.jpg' %}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'images/main_info2.jpg' %}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'images/main_info.jpg' %}" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<div class="row top_ranger">
+  <div class="col-md-9">
+    <div class="row">
+    <div class="col-md-8 hg">
+    <div class="row">
+      <div class="slidecontainer">
+        <input type="range" step="1000" min="1000" max="100000" value="7000" class="slider" id="myRange">
+      </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="row">
+      <h2 class="hg2 text-left"><strong><span id="rubles"></span> <span class="ruru">РУБЛЕЙ</span></strong></h2>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-8 hg">
+    <div class="row">
+    <div class="slidecontainer">
+      <input type="range" step="1" min="1" max="52" value="{{ request.GET.days }}" class="slider" id="myRangeDay">
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="row">
+      <h2 class="hg2 text-left"><strong><span id="weeks"></span> <span class="ruru">НЕДЕЛЬ</span></strong></h2>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="row fix">
+    <button class="btn button_rubles"><strong>ПОДОБРАТЬ</strong></button>
+    </div>
+  </div>
+</div>
+<div class="row mfo">
+  {% for post in object_list %}
+  <div class="col-md-12 one_item_list">
+    <div class="row">
+      <div class="col-md-3">
+        <a target="_blank" width="100%" href="/мфо/{{ post.slug }}"><img  width="100%" src="/{{ post.logo }}" /></a>
+      </div>
+      <div class="col-md-7 description">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <h5 class="small_word">Сумма</h5>
+            </div>
+            <div class="row left_line">
+              <p> от <strong class="credit">{{ post.min_credit}}</strong> рублей<br/>
+            до <strong class="credit">{{ post.max_credit}}</strong> рублей</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <h5 class="small_word">срок</h5>
+            </div>
+            <div class="row left_line">
+              <p>от <strong class="credit">{{ post.min_days}}</strong> дней<br/>
+              до <strong class="credit">{{ post.max_days}}</strong> дней</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <h5 class="small_word">Ставка в день</h5>
+            </div>
+            <div class="row left_line">
+              <p>от <strong class="credit"> {{ post.percent_per_day}}</strong>%</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              {% if post.first_credit_free == True %}
+                <h5 class="rek btn-4" style="border: 2px solid #E60042; padding: 5px;">ПЕРВЫЙ ЗАЙМ ПОД 0%</h5>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row text-center">
+              {% if post.scope > 70 %}
+                <h5 class="rek2">РЕЙТИНГ {{ post.scope}}%</h5>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <h5 class="rek"><a target="_blank" class="a_item" href="/мфо/{{ post.slug }}">ПОДРОБНЕЕ</a></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="row">
+        <a target="_blank" href="go/{{ post.slug}}"><button class="btn but2"><strong>РАССЧИТАТЬ ЗАЙМ</strong></button></a>
+        </div>
+      </div>
+  </div>
+  </div>
+  {% endfor %}
+  </ul>
+  </div>
+  {% endblock %}
