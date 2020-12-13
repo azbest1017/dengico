@@ -45,11 +45,11 @@
     </div>
   </div>
   <div class="col-md-12 withdraw">
-      <h5><strong>Способы вывода</strong></h5>
+      <h5><strong>Способы получения:</strong></h5>
       <div class="row">
         {% for withdraw in post.withdraw.all %}
           <div class="col-md-2">
-            <img style="border-radius:0.25em; margin-bottom: 30px;" src="/{{ withdraw.logo }}" width="100%"/>
+            <img style="border-radius:0.25em; margin-bottom: 30px;" src="/{{ withdraw.logo }}" width="100%" alt="{{ withdraw.name }}"/>
           </div>
          {% endfor %}
       </div>

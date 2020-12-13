@@ -241,7 +241,9 @@ border-radius: 0.25em;
 }
 
 .withdraw{
-  
+  margin-top: 15px;
+  border-top: 2px solid #8b8b8b;
+  padding-top: 15px;
 }
 
 /* -----Двигающиеся слова----*/
