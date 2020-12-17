@@ -24,19 +24,19 @@
   </a>
 </div>
 </div>
-<form class="row top_ranger" method="GET" action=".">
+<form class="row top_ranger" method="GET" action="." autocomplete="off">
   <div class="col-md-9">
     <div class="row">
     <div class="col-md-8 hg">
     <div class="row">
       <div class="slidecontainer">
-        <input  type="range" step="1000" min="1000" max="100000" value="7000" class="slider" id="myRange">
+        <input name="rubles" type="range" step="1000" min="1000" max="100000" value="7000" class="slider" id="myRange">
       </div>
     </div>
     </div>
     <div class="col-md-4">
     <div class="row">
-      <h2 class="hg2 text-left"><strong><span id="rubles"></span> <span class="ruru">РУБЛЕЙ</span></strong></h2>
+      <h2 class="hg2 text-left"><strong><input class="MainInput" type="number" id="rubles" value="7000"> <span class="ruru">РУБЛЕЙ</span></strong></h2>
     </div>
     </div>
     </div>
@@ -44,7 +44,7 @@
     <div class="col-md-8 hg">
     <div class="row">
     <div class="slidecontainer">
-      <input type="range" step="1" min="1" max="52" value="1" class="slider" id="myRangeDay">
+      <input type="range" step="1" min="1" max="52" value="2" class="slider" name="weeks" id="myRangeDay">
     </div>
     </div>
     <div class="form-check">
@@ -56,7 +56,7 @@
     </div>
     <div class="col-md-4">
     <div class="row">
-      <h2 class="hg2 text-left"><strong><span id="weeks"></span> <span class="ruru">НЕДЕЛЬ</span></strong></h2>
+      <h2 class="hg2 text-left"><strong><input class="MainInput" type="number" id="weeks" value="2"><span class="ruru">НЕДЕЛЬ</span></strong></h2>
     </div>
     </div>
     </div>
@@ -68,7 +68,6 @@
   </div>
 </form>
 <div class="row mfo">
-
   {% for post in posts %}
   <div class="col-md-12 one_item_list">
     <div class="row">

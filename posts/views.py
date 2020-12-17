@@ -17,12 +17,24 @@ class Redirect(DetailView):
     model = Post
     template_name = 'redirect.html'
 
+
+def is_it_valid(param):
+    return param != '' and param is not None
+
 def filter(request):
     all_mfo = Post.objects.all()
     first_credit_free = request.GET.get('first_credit_free')
+    rubles = request.GET.get('rubles')
+    weeks = request.GET.get('weeks')
     if first_credit_free == 'on':
         all_mfo = all_mfo.filter(first_credit_free=True)
         print(all_mfo)
+    if is_it_valid(rubles):
+        all_mfo = all_mfo.filter(max_credit__gte=rubles)
+    if is_it_valid(weeks):
+        weeks = int(weeks)*7
+        all_mfo = all_mfo.filter(max_days__gte=weeks)
+        print(weeks)
     return all_mfo
 
 def MfoView(request):
