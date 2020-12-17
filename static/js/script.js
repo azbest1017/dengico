@@ -4,21 +4,18 @@ function numberWithCommas(x) {
 }
 
 
-
-
-
-
-
-
-
-function updateWeeksInput(val) {
-          document.getElementById('weeks').value=val;
-        }
-
 $(document).on('input', '#myRange', function() {
             $('#rubles').val( $(this).val() );
       });
 
 $(document).on('input', '#myRangeDay', function() {
             $('#weeks').val( $(this).val() );
+      });
+
+$(document).on('input', '#rubles', function() {
+            $('#myRange').val( $(this).val() );
+      });
+
+$(document).on('input', '#weeks', function() {
+            $('#myRangeDay').val( $(this).val() );
       });
