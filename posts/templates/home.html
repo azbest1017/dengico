@@ -1,5 +1,6 @@
 {% extends 'main.html'  %}
 {% load static %}
+{% block title %}Сайт выгодных займов по всей России{% endblock %}
 {% block content %}
 <div class="row">
   <div id="carouselExampleControls" class="carousel slide main_info" data-ride="carousel">
@@ -36,7 +37,7 @@
     </div>
     <div class="col-md-4">
     <div class="row">
-      <h2 class="hg2 text-left"><strong><input class="MainInput" type="number" id="rubles" value="7000"> <span class="ruru">РУБЛЕЙ</span></strong></h2>
+      <h2 class="hg2 text-left"><strong><input class="MainInput" type="number" id="rubles" value="7000"><span class="ruru">РУБЛЕЙ</span></strong></h2>
     </div>
     </div>
     </div>
@@ -47,18 +48,18 @@
       <input type="range" step="1" min="1" max="52" value="2" class="slider" name="weeks" id="myRangeDay">
     </div>
     </div>
-    <div class="form-check">
-  <input type="checkbox" id="first_credit_free" name="first_credit_free">
-  <label class="form-check-label" for="first_credit_free">
-    Первый Займ под 0%
-  </label>
-</div>
     </div>
     <div class="col-md-4">
     <div class="row">
       <h2 class="hg2 text-left"><strong><input class="MainInput" type="number" id="weeks" value="2"><span class="ruru">НЕДЕЛЬ</span></strong></h2>
     </div>
     </div>
+    </div>
+    <div class="row box_for">
+      <input type="checkbox" class="styled-checkbox" id="first_credit_free" name="first_credit_free">
+
+        <h6>  <label for="first_credit_free" class="zero"><strong>ПЕРВЫЙ ЗАЙМ <span class="gold">ПОД 0%</span></strong></label></h6>
+
     </div>
   </div>
   <div class="col-md-3">
