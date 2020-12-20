@@ -26,31 +26,31 @@
 </div>
 </div>
 <form class="row top_ranger" method="GET" action="." autocomplete="off" id="main_form">
-  <div class="col-md-9">
+  <div class="col-md-9 col-lg-9 col-xl-9">
     <div class="row">
-    <div class="col-md-8 hg">
+    <div class="col-md-8 col-lg-8 col-xl-8 hg">
     <div class="row">
       <div class="slidecontainer">
         <input name="rubles" type="range" step="1000" min="1000" max="100000" value="7000" class="slider" id="myRange" onkeyup='saveValue(this);'/>
       </div>
     </div>
     </div>
-    <div class="col-md-4">
-    <div class="row">
+    <div class="col-md-4 col-lg-4 col-xl-4">
+    <div class="row md-right">
       <h2 class="hg2 text-left"><strong><input class="MainInput" type="number" id="rubles" value="7000" /><span class="ruru">РУБЛЕЙ</span></strong></h2>
     </div>
     </div>
     </div>
     <div class="row">
-    <div class="col-md-8 hg">
+    <div class="col-md-8 col-lg-8 col-xl-8 hg">
     <div class="row">
     <div class="slidecontainer">
       <input type="range" step="1" min="1" max="52" value="2" class="slider" name="weeks" id="myRangeDay"/>
     </div>
     </div>
     </div>
-    <div class="col-md-4">
-    <div class="row">
+    <div class="col-md-4 col-lg-4 col-xl-4">
+    <div class="row md-right">
       <h2 class="hg2 text-left"><strong><input class="MainInput" type="number" id="weeks" value="2"/><span class="ruru">НЕДЕЛЬ</span></strong></h2>
     </div>
     </div>
@@ -60,7 +60,7 @@
         <h6>  <label for="first_credit_free" class="zero"><strong>ПЕРВЫЙ ЗАЙМ <span class="gold">ПОД 0%</span></strong></label></h6>
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 col-lg-3 col-xl-3">
     <div class="row fix">
     <button class="btn button_rubles" id="button_go" type="submit" value="Submit"><strong>ПОДОБРАТЬ</strong></button>
     </div>
@@ -68,14 +68,14 @@
 </form>
 <div class="row mfo">
   {% for post in posts %}
-  <div class="col-md-12 one_item_list">
+  <div class="col-md-12 col-lg-12 col-xl-12 one_item_list">
     <div class="row">
-      <div class="col-md-3">
-        <a target="_blank" width="100%" href="/мфо/{{ post.slug }}"><img  width="100%" src="/{{ post.logo }}" /></a>
+      <div class="col-md-3 col-lg-3 col-xl-3">
+        <a target="_blank" width="100%" href="/мфо/{{ post.slug }}"><img  class="mfo_img" width="100%" src="/{{ post.logo }}" /></a>
       </div>
-      <div class="col-md-7 description">
+      <div class="col-md-7 col-lg-7 col-xl-7 description">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div class="row">
               <h5 class="small_word">Сумма</h5>
             </div>
@@ -84,7 +84,7 @@
             до <strong class="credit">{{ post.max_credit}}</strong> рублей</p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div class="row">
               <h5 class="small_word">срок</h5>
             </div>
@@ -93,7 +93,7 @@
               до <strong class="credit">{{ post.max_days}}</strong> дней</p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div class="row">
               <h5 class="small_word">Ставка в день</h5>
             </div>
@@ -103,30 +103,30 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div class="row">
               {% if post.first_credit_free == True %}
                 <h5 class="rek btn-4" style="border: 2px solid #E60042; padding: 5px;">ПЕРВЫЙ ЗАЙМ ПОД 0%</h5>
               {% endif %}
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div class="row text-center">
               {% if post.scope > 70 %}
                 <h5 class="rek2">РЕЙТИНГ {{ post.scope}}%</h5>
               {% endif %}
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div class="row">
               <h5 class="rek"><a target="_blank" class="a_item" href="/мфо/{{ post.slug }}">ПОДРОБНЕЕ</a></h5>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2 col-xl-2">
         <div class="row">
-        <a target="_blank" href="go/{{ post.slug}}"><button class="btn but2"><strong>РАССЧИТАТЬ ЗАЙМ</strong></button></a>
+        <a class="a_small" target="_blank" href="go/{{ post.slug}}"><button class="btn but2"><strong>РАССЧИТАТЬ ЗАЙМ</strong></button></a>
         </div>
       </div>
   </div>
