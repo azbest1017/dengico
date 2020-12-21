@@ -3,11 +3,11 @@
 {% block title %}{{ post.name}}{% endblock %}
 {% block content %}
 <div class="row mfo_main">
-  <div class="col-md-8" id="item_2">
+  <div class="col-md-8">
     <h3><strong>{{ post.name}}</strong></h3>
     {{ post.body |safe}}
   </div>
-  <div class="col-md-4 mfo_main_right" id="item_1">
+  <div class="col-md-4 mfo_main_right">
     <div class="row">
       <img style="border-radius:0.25em; margin-bottom: 30px;" src="/{{ post.logo.name }}" width="100%"/>
     </div>
@@ -38,18 +38,18 @@
     {% endif %}
     {% if post.scope > 70 %}
     <div class="row text-center">
-        <h5 class="rek2 rek3">РЕЙТИНГ {{ post.scope}}%</h5>
+        <h5 class="rek2 rek3 wd_auto">РЕЙТИНГ {{ post.scope}}%</h5>
     </div>
     {% endif %}
     <div class="row sticky">
       <a  class="rek3 sticky_more2" target="_blank" href="{% url 'redirect_go' post.slug %}"><button class="btn but2 but3 sticky_more"><strong>РАССЧИТАТЬ ЗАЙМ</strong></button></a>
     </div>
   </div>
-  <div class="col-md-12 withdraw" id="item_3">
+  <div class="col-md-12 withdraw">
       <h5 style="margin-bottom:15px"><strong>Способы получения займа:</strong></h5>
       <div class="row">
         {% for withdraw in post.withdraw.all %}
-          <div class="col-3">
+          <div class="col-6 col-md-2">
             <img style="border-radius:0.25em; margin-bottom: 30px;" src="/{{ withdraw.logo }}" width="100%" alt="{{ withdraw.name }}"/>
           </div>
          {% endfor %}
