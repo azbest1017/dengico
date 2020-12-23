@@ -7,7 +7,6 @@ from django.urls import reverse
 class Affiliate_Partner(models.Model):
     name = models.CharField(max_length=300)
     api_key = models.CharField(max_length=500, default="api_key")
-    account = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -28,6 +27,8 @@ class Methot_Withdraw(models.Model):
         return self.name
 
 class Post(models.Model):
+    offer_status = models.BooleanField(default=True)
+    offer_id = models.IntegerField(default=0)
     link = models.CharField(default="Ссылка партнерки", max_length=5000)
     name = models.CharField(max_length=240, unique=True, default="Название Оффера")
     logo = models.ImageField(upload_to='static/images/mfo/', height_field=None, width_field=None, max_length=100)

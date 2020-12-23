@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'ckeditor',
+    'requests',
+    'json',
+    'schedule',
 ]
 
 MIDDLEWARE = [

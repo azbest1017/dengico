@@ -57,12 +57,3 @@ $('input').on('change', function() {
     console.log($(this).is(':checked'));
 });
 // SAVE VALUE OF CHECKBOX AFTER SUBMINT FORM END--->
-
-
-
-
-
-
-  //Fire it when the page first loads:
-  alterClass();
-});
