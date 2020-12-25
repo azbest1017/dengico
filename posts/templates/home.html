@@ -43,7 +43,7 @@
     </div>
     </div>
     </div>
-    <div class="row">
+    <div class="row mg-bt10">
     <div class="col-md-8 col-lg-8 col-xl-8 hg">
     <div class="row">
     <div class="slidecontainer">
@@ -57,10 +57,33 @@
     </div>
     </div>
     </div>
-    <div class="row box_for">
-      <input type="checkbox" class="styled-checkbox" id="first_credit_free" name="first_credit_free">
-        <h6>  <label for="first_credit_free" class="zero"><strong>ПЕРВЫЙ ЗАЙМ <span class="gold">ПОД 0%</span></strong></label></h6>
-    </div>
+    <div class="row">
+    <div class="col-md-6 box_for">
+  <div class="row">
+  <input type="checkbox" class="styled-checkbox" id="first_credit_free" name="first_credit_free">
+  <h6><label for="first_credit_free" class="zero"><strong>ПЕРВЫЙ ЗАЙМ <span class="gold">ПОД 0%</span></strong></label></h6>
+  </div>
+  </div>
+    <div class="col-md-6 z_index99">
+      <div class="multipleSelection">
+          <div class="selectBox"
+              onclick="showCheckboxes()">
+              <select>
+                  <option>СПОСОБ ПОЛУЧЕНИЯ ЗАЙМА</option>
+              </select>
+              <div class="overSelect"></div>
+          </div>
+          <div id="checkBoxes">
+              {% for method in methods %}
+                  <label class="list_of_methods"for="method{{method.pk}}">
+                      <input  type="checkbox" name="{{method.name}}" id="method{{method.pk}}" checked/>
+                    {{method.name}}
+                  </label>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+  </div>
   </div>
   <div class="col-md-3 col-lg-3 col-xl-3">
     <div class="row fix">

@@ -46,14 +46,46 @@ window.addEventListener('load', function() {
 });
 // SAVE VALUE AFTER SUBMINT FORM END--->
 
-// SAVE VALUE OF CHECKBOX AFTER SUBMINT FORM START--->
-$(function(){
-    var test = localStorage.input === 'true'? true: false;
-    $('input').prop('checked', test);
+// SAVE VALUE OF CHECKBOXes AFTER SUBMINT FORM START--->
+document.addEventListener("DOMContentLoaded", function(){
+
+   var checkbox = document.querySelectorAll("input[type='checkbox']");
+
+   for(var item of checkbox){
+      item.addEventListener("click", function(){
+         localStorage.s_item ? // verifico se existe localStorage
+            localStorage.s_item = localStorage.s_item.indexOf(this.id+",") == -1 // verifico de localStorage contém o id
+            ? localStorage.s_item+this.id+"," // não existe. Adiciono a id no loaclStorage
+            : localStorage.s_item.replace(this.id+",","") : // já existe, apago do localStorage
+         localStorage.s_item = this.id+",";  // não existe. Crio com o id do checkbox
+      });
+   }
+
+   if(localStorage.s_item){ // verifico se existe localStorage
+      for(var item of checkbox){ // existe, percorro as checkbox
+         item.checked = localStorage.s_item.indexOf(item.id+",") != -1 ? true : false; // marco true nas ids que existem no localStorage
+      }
+   }
 });
 
-$('input').on('change', function() {
-    localStorage.input = $(this).is(':checked');
-    console.log($(this).is(':checked'));
-});
 // SAVE VALUE OF CHECKBOX AFTER SUBMINT FORM END--->
+
+// MultiCheckBoxes list select START--->
+
+var show = true;
+
+function showCheckboxes() {
+    var checkboxes = document.getElementById("checkBoxes");
+
+    if (show) {
+        checkboxes.style.display = "block";
+        show = false;
+    } else {
+        checkboxes.style.display = "none";
+        show = true;
+    }
+
+}
+
+
+// MultiCheckBoxes list select END--->

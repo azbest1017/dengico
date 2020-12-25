@@ -249,7 +249,12 @@ border-radius: 0.25em;
 .MainInput:focus{
    border: 3px solid #FFBF00;
 }
-
+.z_index99{
+  z-index: 99;
+}
+.mg-bt10{
+  margin-bottom: 10px;
+}
 .zero{
   margin-top: 5px;
   cursor: pointer;
@@ -512,7 +517,56 @@ input[type=number] {
 	}
 }
 /* -----Анимация Загрузки----*/
+/* -----ЧекБоксы----*/
+.multipleSelection {
+   width: 350px;
+   background-color: white;
+}
 
+.selectBox {
+   position: relative;
+}
+
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+    height: 27px;
+    vertical-align: middle;
+    border: 2px solid #FFBF00;
+    border-radius: 0.20em;
+  }
+
+.overSelect {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+}
+.list_of_methods{
+  text-transform: uppercase;
+}
+#checkBoxes {
+   display: none;
+   position: absolute;
+   background: white;
+   width: 350px;
+   border-right: 2px solid #FFBF00;
+   border-left: 2px solid #FFBF00;
+   border-bottom: 2px solid #FFBF00;
+   border-radius: 0em 0em 0.20em 0.20em;
+ }
+
+#checkBoxes label {
+   display: block;
+   padding: 0px 0px 0px 5px;
+   margin-top: 5px;
+   font-size: 14px;
+}
+#checkBoxes label:hover {
+   background-color: lightgray;
+}
+/* -----ЧекБоксы Конец----*/
 
 @media only screen and (max-width: 1200px) {
 .but2{
