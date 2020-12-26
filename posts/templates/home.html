@@ -92,6 +92,13 @@
   </div>
 </form>
 <div class="row mfo">
+  {% if message == True %}
+  <div class="col-md-12 col-lg-12 col-xl-12">
+    <h3>Не найдено подходящего МФО</h3>
+    <h4>Попробуйте другие параметры</h4>
+  </div>
+
+  {% endif %}
   {% for post in posts %}
   <div class="col-md-12 col-lg-12 col-xl-12 one_item_list">
     <div class="row">

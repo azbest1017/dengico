@@ -29,7 +29,7 @@ def filter(request):
     first_credit_free = request.GET.get('first_credit_free')
     rubles = request.GET.get('rubles')
     weeks = request.GET.get('weeks')
-    all_method_pay = request.POST.getlist('all_method_pay[]')
+    all_method_pay = []
     if first_credit_free == 'on':
         all_mfo = all_mfo.filter(first_credit_free=True)
         print(all_mfo)
@@ -39,15 +39,25 @@ def filter(request):
         weeks = int(weeks)*7
         all_mfo = all_mfo.filter(max_days__gte=weeks)
     all_withdraw = Methot_Withdraw.objects.all()
-    print(all_method_pay)
-
+    for i in all_withdraw:
+        d = i.name
+        z = request.GET.get(d)
+        x = i.pk
+        if z == 'on':
+            all_method_pay += [x]
+    all_mfo = all_mfo.filter(withdraw__in=all_method_pay).distinct()
     return all_mfo
 
 
 def MfoView(request):
     all_mfo = filter(request)
+    check_empty = all_mfo.exists()
+    message = False
+    if check_empty == False:
+        message = True
     context = {
         'posts': all_mfo.order_by('-pament','-scope'),
-        'methods': Methot_Withdraw.objects.all()
+        'methods': Methot_Withdraw.objects.all(),
+        'message': message,
 }
     return render(request, "home.html", context)
