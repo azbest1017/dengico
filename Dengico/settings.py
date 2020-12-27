@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'requests',
     'json',
     'schedule',
+
 ]
 
 MIDDLEWARE = [

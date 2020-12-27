@@ -91,15 +91,21 @@
     </div>
   </div>
 </form>
+{% if messages %}
+    {% for message in messages %}
+    {% if 'not_find' in message.extra_tags %}
+    <div class="row alert alert-warning normal_message" role="alert">
+      <h5 style="margin-bottom:0px"><strong>Не найденно подходящего МФО!</strong>  Попробуйте другие параметры поиска.</h5>
+    </div>
+    {% elif 'find' in message.extra_tags %}
+    <div class="row alert alert-success normal_message" role="alert">
+      <h5 style="margin-bottom:0px"><strong>Найденно {{message}} подходящих МФО!</strong></h5>
+    </div>
+    {% endif %}
+    {% endfor %}
+{% endif %}
 <div class="row mfo">
-  {% if message == True %}
-  <div class="col-md-12 col-lg-12 col-xl-12">
-    <h3>Не найдено подходящего МФО</h3>
-    <h4>Попробуйте другие параметры</h4>
-  </div>
-
-  {% endif %}
-  {% for post in posts %}
+{% for post in posts %}
   <div class="col-md-12 col-lg-12 col-xl-12 one_item_list">
     <div class="row">
       <div class="col-md-3 col-lg-3 col-xl-3">
@@ -158,12 +164,12 @@
       </div>
       <div class="col-md-2 col-lg-2 col-xl-2">
         <div class="row">
-        <a class="a_small" target="_blank" href="go/{{ post.slug}}"><button class="btn but2"><strong>РАССЧИТАТЬ ЗАЙМ</strong></button></a>
+          <a class="a_small" target="_blank" href="go/{{ post.slug}}"><button class="btn but2"><strong>РАССЧИТАТЬ ЗАЙМ</strong></button></a>
         </div>
       </div>
   </div>
   </div>
-  {% endfor %}
-  </ul>
-  </div>
-  {% endblock %}
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

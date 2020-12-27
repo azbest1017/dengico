@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.db.models import Q, Count
 from django.views.generic import ListView, DetailView
 from .models import Post, Methot_Withdraw
+from django.contrib import messages
 import requests, json ,schedule, time, datetime
-
 #def home(request):
 #    return render(request, 'home.html', {})
 #class HomeView(ListView):
@@ -20,6 +20,7 @@ class Redirect(DetailView):
     template_name = 'redirect.html'
 
 
+
 def is_it_valid(param):
     return param != '' and param is not None
 
@@ -32,7 +33,6 @@ def filter(request):
     all_method_pay = []
     if first_credit_free == 'on':
         all_mfo = all_mfo.filter(first_credit_free=True)
-        print(all_mfo)
     if is_it_valid(rubles):
         all_mfo = all_mfo.filter(max_credit__gte=rubles)
     if is_it_valid(weeks):
@@ -46,18 +46,22 @@ def filter(request):
         if z == 'on':
             all_method_pay += [x]
     all_mfo = all_mfo.filter(withdraw__in=all_method_pay).distinct()
+    if all_mfo.exists() == False:
+        all_mfo = Post.objects.all()
+        all_mfo = all_mfo.filter(offer_status=True)
+        if is_it_valid(rubles):
+            messages.error(request, "not_find", extra_tags='not_find')
+    else:
+        quantity = len(all_mfo)
+        if is_it_valid(rubles):
+            messages.success(request, str(quantity), extra_tags='find')
     return all_mfo
 
 
 def MfoView(request):
     all_mfo = filter(request)
-    check_empty = all_mfo.exists()
-    message = False
-    if check_empty == False:
-        message = True
     context = {
         'posts': all_mfo.order_by('-pament','-scope'),
         'methods': Methot_Withdraw.objects.all(),
-        'message': message,
 }
     return render(request, "home.html", context)

@@ -288,7 +288,10 @@ border-radius: 0.25em;
 .add_gold_border{
   border: 3px solid #FFBF00;
 }
-
+.normal_message{
+  margin-top: 90px;
+  margin-bottom: -50px;
+}
 
 
 /* Chrome, Safari, Edge, Opera */
