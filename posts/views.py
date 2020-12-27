@@ -4,12 +4,6 @@ from django.views.generic import ListView, DetailView
 from .models import Post, Methot_Withdraw
 from django.contrib import messages
 import requests, json ,schedule, time, datetime
-#def home(request):
-#    return render(request, 'home.html', {})
-#class HomeView(ListView):
-#     model = Post
-#     template_name = 'home.html'
-    # ordering = ['-pament','-scope']
 
 class PostDetails(DetailView):
     model = Post
@@ -18,8 +12,6 @@ class PostDetails(DetailView):
 class Redirect(DetailView):
     model = Post
     template_name = 'redirect.html'
-
-
 
 def is_it_valid(param):
     return param != '' and param is not None
