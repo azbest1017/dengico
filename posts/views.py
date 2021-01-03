@@ -3,7 +3,7 @@ from django.db.models import Q, Count
 from django.views.generic import ListView, DetailView
 from .models import Post, Methot_Withdraw
 from django.contrib import messages
-import requests, json ,schedule, time, datetime
+import requests, json
 
 class PostDetails(DetailView):
     model = Post
@@ -22,6 +22,7 @@ def filter(request):
     first_credit_free = request.GET.get('first_credit_free')
     rubles = request.GET.get('rubles')
     weeks = request.GET.get('weeks')
+    print(Post.objects.first().name)
     all_method_pay = []
     if first_credit_free == 'on':
         all_mfo = all_mfo.filter(first_credit_free=True)

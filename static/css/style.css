@@ -522,7 +522,7 @@ input[type=number] {
 /* -----Анимация Загрузки----*/
 /* -----ЧекБоксы----*/
 .multipleSelection {
-   width: 350px;
+   width: 95%;
    background-color: white;
 }
 
@@ -553,7 +553,7 @@ input[type=number] {
    display: none;
    position: absolute;
    background: white;
-   width: 350px;
+   width: 95%;
    border-right: 2px solid #FFBF00;
    border-left: 2px solid #FFBF00;
    border-bottom: 2px solid #FFBF00;
@@ -575,7 +575,6 @@ input[type=number] {
 .but2{
   font-size: 0.7em;
 }
-
 .rek  {
   font-size: 13px;
 }
@@ -593,6 +592,9 @@ input[type=number] {
   font-size: 24px;
   bottom: -8px;
 }
+.type_opt{
+  font-size: 14px;
+}
 .rek  {
   font-size: 10px;
 }
@@ -602,16 +604,45 @@ input[type=number] {
 .mfo_img {
   margin-top: 55px;
 }
+
+.normal_message {
+    margin-top: 150px;
+    margin-bottom: -130px;
+}
 }
 
 @media only screen and (max-width: 768px) {
-
 .content {
  display: none;
 }
-
+.normal_message {
+    margin-top: 390px;
+    margin-bottom: -390px;
+}
+#checkBoxes {
+   width:100%;
+ }
+ .multipleSelection {
+    width: 100%;
+}
+#checkBoxes label {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.type_opt {
+    font-size: 20px;
+}
+.zero {
+    font-size: 18px;
+}
 .mfo {
-    margin-top: 290px;
+  margin-top: 410px;
+}
+.multipleSelection {
+    margin-bottom: 35px;
+}
+.selectBox select {
+  height: 50px;
 }
 .slidecontainer{
     width: 100%;

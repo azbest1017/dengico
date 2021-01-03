@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'requests',
     'json',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Dengico.wsgi.application'
+
+CRONJOBS = [
+    ('*/1 * * * *', 'posts.cron.my_scheduled_job')
+]
 
 
 # Database
