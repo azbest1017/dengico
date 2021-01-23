@@ -28,6 +28,7 @@ class Methot_Withdraw(models.Model):
 
 class Post(models.Model):
     offer_status = models.BooleanField(verbose_name='Оффер включен', default=True)
+    offer_want = models.BooleanField(verbose_name='Оффер в Проверке', default=True)
     offer_id = models.IntegerField(verbose_name='ID Оффера',default=0)
     link = models.CharField(verbose_name='Ссылка партнерки',default="Ссылка", max_length=5000)
     name = models.CharField(verbose_name='Название МФО',max_length=240, unique=True, default="Название Оффера")
