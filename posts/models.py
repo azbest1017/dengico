@@ -11,13 +11,11 @@ class Affiliate_Partner(models.Model):
     def __str__(self):
         return self.name
 
-class Reviews(models.Model):
-    stars = models.IntegerField(range(1,10))
-    comment = models.TextField(max_length=160)
+class Category(models.Model):
     name = models.CharField(max_length=160)
 
     def __str__(self):
-        return self.stars  + ' | ' + self.name
+        return self.name
 
 class Methot_Withdraw(models.Model):
     name = models.CharField(max_length=160, unique=True)
@@ -30,6 +28,7 @@ class Post(models.Model):
     offer_status = models.BooleanField(verbose_name='Оффер включен', default=True)
     offer_want = models.BooleanField(verbose_name='Оффер в Проверке', default=True)
     offer_id = models.IntegerField(verbose_name='ID Оффера',default=0)
+    category = models.ManyToManyField(Category,verbose_name='Категории')
     link = models.CharField(verbose_name='Ссылка партнерки',default="Ссылка", max_length=5000)
     name = models.CharField(verbose_name='Название МФО',max_length=240, unique=True, default="Название Оффера")
     logo = models.ImageField(verbose_name='Логотип',upload_to='static/images/mfo/', height_field=None, width_field=None, max_length=100)

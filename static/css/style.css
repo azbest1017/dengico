@@ -25,7 +25,11 @@ color: black;
   border-radius: 0px 0px 15px 15px;
   margin-bottom: 40px;
 }
-
+.notice_info {
+    font-size: 13px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
 .a_item{
   color: #1B1BB3;
   text-decoration: none;
@@ -128,7 +132,9 @@ color: black;
   margin-top: 10px;
   border-radius: 10px;
 }
-
+.mr-t{
+  margin-top: 45px;
+}
 .hg2{
   font-size: 2em;
 }
@@ -154,7 +160,7 @@ color: black;
   float: right;
   color: #1B1BB3;
   margin-top: 50px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   border: 2px solid #FFBF00;
 }
 
@@ -170,8 +176,80 @@ color: black;
   margin-top: 20px;
 }
 .mfo{
-  margin-top: 75px;
   border-top: 2px solid #1B1BB3;
+}
+.category{
+  list-style-type: none;
+  padding-left: 0px;
+  margin-top: 4px;
+}
+.category li a{
+  font-size: 14px;
+  text-decoration: none;
+  color: #1B1BB3;
+  font-weight: bold;
+  border: 2px solid #FFBF00;
+  padding: 5px;
+  border-radius: 3px;
+}
+.category li{
+  margin-bottom: 13px;
+  display: inline-block;
+}
+.copyright{
+  margin-bottom: 0px;
+}
+.category li a:hover{
+  text-decoration: none;
+  color: white;
+  background-color: #1B1BB3;
+}
+#category_active{
+  border: 2px solid #FFBF00;
+  color: white;
+  background-color: #1B1BB3;
+}
+#category_active:hover{
+  border: 2px solid #FFBF00;
+  color: white;
+  background-color: #1B1BB3;
+}
+footer{
+	background-color: #d9d9d975;
+}
+.footer_p{
+    padding-top: 60px;
+}
+.footer_logo{
+	padding-top: 20px;
+}
+.info_text{
+    margin-left: 20px;
+    font-size: 18px;
+}
+.ms_good{
+  margin-bottom:0px;
+  font-size: 1.25rem;
+}
+.footer_ul{
+  list-style-type: none;
+  padding-left: 0px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.footer_ul li a:hover{
+  color: #1B1BB3;
+  text-decoration: none;
+}
+.footer_ul li{
+  display: inline-block;
+  margin-right: 10px;
+}
+.footer_title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 .rating{
   color: #317D45;
@@ -187,14 +265,14 @@ color: black;
 .rek{
   color: red;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.8em;
   padding: 5px;
 }
 
 .rek2{
   color: #67AB2B;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.8em;
   padding: 5px;
   border: 2px solid #67AB2B;
 }
@@ -252,9 +330,6 @@ border-radius: 0.25em;
 .z_index99{
   z-index: 99;
 }
-.mg-bt10{
-  margin-bottom: 10px;
-}
 .zero{
   margin-top: 5px;
   cursor: pointer;
@@ -289,8 +364,9 @@ border-radius: 0.25em;
   border: 3px solid #FFBF00;
 }
 .normal_message{
-  margin-top: 90px;
-  margin-bottom: -50px;
+  margin-top: 45px;
+  margin-bottom: -25px;
+  width: 100%;
 }
 
 
@@ -581,14 +657,13 @@ input[type=number] {
 .rek2{
   font-size: 13px;
 }
-
+.category li a {
+    font-size: 14px;
+}
 }
 
 @media only screen and (max-width: 992px) {
-.mfo {
-    margin-top: 150px;
-}
-  .content {
+.content {
   font-size: 24px;
   bottom: -8px;
 }
@@ -604,20 +679,40 @@ input[type=number] {
 .mfo_img {
   margin-top: 55px;
 }
-
+.ms_good {
+    font-size: 1rem;
+}
 .normal_message {
-    margin-top: 150px;
-    margin-bottom: -130px;
+    margin-top: 110px;
+}
+.category li a{
+  font-size: 12px;
+}
+.category li {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.category{
+  margin-bottom: 5px;
+  margin-top: 0px;
 }
 }
-
 @media only screen and (max-width: 768px) {
-.content {
- display: none;
+  .content {
+   display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+.info_text {
+  margin-left: 0px;
+  margin-top: 15px;
+}
+.button_rubles {
+    margin-top: 15px;
 }
 .normal_message {
-    margin-top: 390px;
-    margin-bottom: -390px;
+    margin-top: 250px;
+    margin-bottom: -150px;
 }
 #checkBoxes {
    width:100%;
@@ -636,7 +731,7 @@ input[type=number] {
     font-size: 18px;
 }
 .mfo {
-  margin-top: 410px;
+  margin-top: 0px;
 }
 .multipleSelection {
     margin-bottom: 35px;
@@ -674,13 +769,13 @@ input[type=number] {
     padding: 0px 0px 0px 10px;
 }
 .rek  {
-  font-size: 17px;
+  font-size: 12px;
   width: 93%;
   text-align:center;
 
 }
 .rek2{
-  font-size: 17px;
+  font-size: 12px;
   width: 93%;
   margin-bottom: 15px;
 }
@@ -714,5 +809,8 @@ input[type=number] {
 }
 .wd_auto{
   width: 100%;
+}
+.mr-t {
+    margin-top: 165px;
 }
 }

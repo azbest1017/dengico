@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    <title>Деньгицо.ру - {% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{% endblock %}">
     <meta name="keywords" content="{% block keywords %}{% endblock %}">
   </head>
@@ -26,10 +26,10 @@
       <div class="col-md-8 col-lg-8 col-xl-8"><div class="content row">
         <div class="content__container">
           <ul class="content__container__list">
-            <li class="content__container__list__item">ПОДРОБНО О <span class="gold">МФО</span> </li>
-            <li class="content__container__list__item"><span class="gold">ТОР 100</span> МФО РОССИИ</li>
+            <li class="content__container__list__item">ЗАЙМЫ<span class="gold"> НА КАРТУ</span> </li>
+            <li class="content__container__list__item"><span class="gold">ОНЛАЙН</span> ЗАЙМЫ</li>
             <li class="content__container__list__item">ВЫГОДНЫЕ <span class="gold">УСЛОВИЯ</span></li>
-            <li class="content__container__list__item"><span class="gold">БЕСПЛАТНЫЕ</span> ЗАЙМЫ</li>
+            <li class="content__container__list__item">БЕСПЛАТНЫЕ <span class="gold">ПОД 0%</span></li>
           </ul>
         </div>
       </div>
@@ -38,9 +38,43 @@
       {% block content %}
       {% endblock %}
   </div>
-  <footer class="text-center">
-    <p>©2021 "dengico.ru". Все права защищены.</p>
-  </footer>
+  <footer>
+<div class="container text-center">
+  <div class="row footer_logo">
+  <div class="col-md-3 col-sm-9">
+    <div class="row"><img class="row logo" src="{% static 'images/logo2.jpg' %}" alt="Деньгицо.ру"/></div>
+  </div>
+  <div class="col-md-9 text-left">
+    <div class="row">
+      <h6 class="info_text">Деньгицо.ру - Это удобный сервис по поиску микрофинансовых организаций по всей России. Здесь вы сможете найти лицензированные МФО и выбрать наиболее подходящее именно вам.</h6>
+    </div>
+  </div>
+  </div>
+  <div class="row text-left"><h3 class="footer_title">Займы, микрокредиты и микрозаймы</h3></div>
+  <div class="row">
+    <ul class="footer_ul text-left">
+      <li><a href="/Онлайн-Займ">Онлайн заявка</a></li>
+      <li><a href="/Бесплатный-Займ">Займы под 0%</a></li>
+      <li><a href="/Займ-Наличными">Получить наличными</a></li>
+      <li><a href="/Займ-на-Карту">На банковскую карту</a></li>
+      <li><a href="/Займ-на-Счет">На банковский счёт</a></li>
+      <li><a href="/Займ-на-Киви">На Киви Кошелёк</a></li>
+      <li><a href="/Займ-на-Яндекс-Деньги">На Яндекс Деньги(Yoomoney)</a></li>
+      <li><a href="/Займ-на-Карту-Мир">На банковскую карту МИР</a></li>
+      <li><a href="/Займ-Переводом-Contact">Переводом CONTACT</a></li>
+      <li><a href="/Займ-Переводом-Золотая-Корона">Переводом Золотая Корона</a></li>
+      <li><a href="/Займ-Без-Карты">Без банковской карты</a></li>
+      <li><a href="/Займ-Круглосуточно">Круглосуточно 24 часа 7 дней в неделю</a></li>
+      <li><a href="/Займ-без-Проверки">Без проверки кредитной истории</a></li>
+      <li><a href="/Займ-без-Паспорта">Без паспорта</a></li>
+      <li><a href="/Займ-без-Отказа-и-Проверок">Без отказа и проверок</a></li>
+      <li><a href="/Займ-Срочно">Срочные займы</a></li>
+    </ul>
+  </div>
+  <div class="row text-left notice_info">Важно! Сервис "dengico.ru" не является финансовым учреждением, банком или кредитором. Мы не выдаем займы. Мы лишь предоставляем информацию о существующих на рынке предложениях по кредитным продуктам. Предложение не является оффертой. Конечные условия займов уточняйте при прямом обращении к кредиторам.</div>
+  <p class="copyright">©2021 "dengico.ru". Все права защищены.</p>
+</div>
+</footer>
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

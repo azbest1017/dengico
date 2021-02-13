@@ -1,8 +1,8 @@
 {% extends 'main.html'  %}
 {% load static %}
-{% block title %}Деньгицо.ру - Самые выгодные онлайн займы на банковскую карту под 0% срочно без документов и проверок{% endblock %}
-{% block description %}Выгодные онлайн займы и микрокредиты на банковскую карту под 0% срочно без документов и проверок{% endblock %}
-{% block keywords %}Деньгицо,займ,онлайн займ,микрозаймы,микрокредиты,на карту,наличными ,на счет,на киви,на яндекс деньги,бесплатный, под 0 процентов{% endblock %}
+{% block title %}Деньгицо.ру - Онлайн займы без отказа и проверок срочно за 5 минут{% endblock %}
+{% block description %}Выгодные онлайн займы без отказа и без проверок мгновенно за 5 минут на банковскую карту{% endblock %}
+{% block keywords %}займ, микрокредит,займ без отказа,без проверок,на карту, за 5 минут,срочно,быстро,мгновенно, без процентов,отзывы{% endblock %}
 {% block content %}
 <div class="row">
   <div id="carouselExampleControls" class="carousel slide main_info" data-ride="carousel">
@@ -27,7 +27,7 @@
   </a>
 </div>
 </div>
-<form class="row top_ranger" method="GET" action="." autocomplete="off" id="main_form">
+<form class="row top_ranger" method="GET" autocomplete="off" id="main_form">
   <div class="col-md-9 col-lg-9 col-xl-9">
     <div class="row">
     <div class="col-md-8 col-lg-8 col-xl-8 hg">
@@ -97,7 +97,7 @@
         <li><a href="/Займ-Круглосуточно">ЗАЙМ КРУГЛОСУТОЧНО</a></li>
         <li><a href="/Займ-без-Проверки">БЕЗ ПРОВЕРКИ</a></li>
         <li><a href="/Займ-без-Паспорта">БЕЗ ПАСПОРТА</a></li>
-        <li><a href="/Займ-без-Отказа-и-Проверок">БЕЗ ОТКАЗА И ПРОВЕРОК</a></li>
+        <li><a id="category_active" href="#">БЕЗ ОТКАЗА И ПРОВЕРОК</a></li>
         <li><a href="/Займ-Срочно">СРОЧНО</a></li>
       </ul>
     </div>
@@ -108,7 +108,7 @@
   <div class="col-md-12 col-lg-12 col-xl-12 one_item_list">
     <div class="row">
       <div class="col-md-3 col-lg-3 col-xl-3">
-        <a target="_blank" width="100%" href="{{ post.slug }}"><img  class="mfo_img" width="100%" src="/{{ post.logo }}" /></a>
+        <a target="_blank" width="100%" href="/мфо/{{ post.slug }}"><img  class="mfo_img" width="100%" src="/{{ post.logo }}" /></a>
       </div>
       <div class="col-md-7 col-lg-7 col-xl-7 description">
         <div class="row">
